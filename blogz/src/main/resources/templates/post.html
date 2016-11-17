@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/"></html>
+
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2 class="post-title">{{ post.title }}</h2>
+<p class="post-body">{{ post.body }}</p>
+<!-- TODO add author w/ link to author's blog    so I added lines 8 - 12 -->
+<p class="post-author">
+    <!--written by {{ post.author }} {{ post.created.strftime('%Y-%m-%d') }} -->
+<p> written by
+<a href="/blog/{{ post.author.username }}">{{ post.author.username }}</a> on {{ post.created.strftime('%Y-%m-%d') }}
+</p>
+
+{% endblock %}
